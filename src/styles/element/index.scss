@@ -1,0 +1,44 @@
+// 主题
+
+$--colors: (
+	"white": #ffffff,
+	"black": #000000,
+	"primary": (
+		"base": #409eff
+	),
+	"success": (
+		"base": #67c23a
+	),
+	"warning": (
+		"base": #e6a23c
+	),
+	"danger": (
+		"base": #f56c6c
+	),
+	"error": (
+		"base": #f56c6c
+	),
+	"info": (
+		"base": #909399
+	)
+);
+
+// 自定义elment-plus前缀
+// @forward "element-plus/theme-chalk/src/mixins/config.scss" with (
+// 	$namespace: "ep"
+// );
+
+@forward "element-plus/theme-chalk/src/common/var.scss" with (
+		// do not use same name, it will override.
+		$colors: $--colors,
+		// $button-padding-horizontal: ("default": 50px)
+	);
+
+// if you want to import all
+// @use "element-plus/theme-chalk/src/index.scss" as *;
+
+// You can comment it to hide debug info.
+// @debug $--colors;
+
+// custom dark variables
+// @use "./dark.scss";
