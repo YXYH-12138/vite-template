@@ -1,6 +1,6 @@
 /**@type {import('prettier').Config} */
 module.exports = {
-	// 使用空格缩
+	// 使用tab缩进
 	useTabs: true,
 	// 指定每个缩进级别的空格数
 	tabWidth: 2,
@@ -10,7 +10,7 @@ module.exports = {
 	singleQuote: false,
 	// 在语句末尾打印分号
 	semi: true,
-	// 换行符使用 auto 结尾是 可选值"<auto|lf|crlf|cr>"
+	// 换行符使用 可选值"<auto|lf|crlf|cr>"
 	endOfLine: "crlf",
 	// 没有尾随逗号
 	trailingComma: "none"
