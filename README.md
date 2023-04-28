@@ -1,3 +1,1 @@
-# vite-vue3-ts-template
-
-使用 vite+ts+vue3 搭建的项目模板
+# Vite + Ts 项目模板
