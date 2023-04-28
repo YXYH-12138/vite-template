@@ -30,7 +30,7 @@ export default ({ mode }: ConfigEnv) => {
 			createHtmlPlugin({ minify: true, inject: { data: { TITLE: VITE_APP_TITLE } } }),
 			AutoImport({
 				resolvers: [ElementPlusResolver()],
-				dts: resolve(root, "../types/auto-imports.d.ts")
+				dts: resolve(root, "./types/auto-imports.d.ts")
 			}),
 			Components({
 				resolvers: [ElementPlusResolver({ importStyle: "sass" })],
