@@ -1,5 +1,6 @@
 import { type ConfigEnv, defineConfig, loadEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
+import UnoCSS from "unocss/vite";
 import { createHtmlPlugin } from "vite-plugin-html";
 import { join, resolve } from "path";
 import AutoImport from "unplugin-auto-import/vite";
@@ -29,11 +30,12 @@ export default ({ mode }: ConfigEnv) => {
 		css: {
 			preprocessorOptions: {
 				scss: {
-					additionalData: `@use "~/styles/element/index.scss" as *;`
+					additionalData: `@use "~/styles/element-variable.scss" as *;`
 				}
 			}
 		},
 		plugins: [
+			UnoCSS(),
 			vue(),
 			createHtmlPlugin({ minify: true, inject: { data: { TITLE: VITE_APP_TITLE } } }),
 			AutoImport({
