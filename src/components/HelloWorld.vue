@@ -15,7 +15,7 @@ const toast = () => {
 </script>
 
 <template>
-	<h1 class="mt5px">{{ msg }}</h1>
+	<h1 class="mt5">{{ msg }}</h1>
 
 	<!-- example components -->
 	<el-button @click="toast">El Message</el-button>

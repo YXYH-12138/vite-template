@@ -19,6 +19,7 @@
 		"@types/node": "^18.7.13",
 		"@typescript-eslint/eslint-plugin": "^5.35.1",
 		"@typescript-eslint/parser": "^5.35.1",
+		"@unocss/preset-rem-to-px": "^0.58.5",
 		"@vitejs/plugin-vue": "^4.1.0",
 		"@vue/eslint-config-typescript": "^11.0.0",
 		"eslint": "^8.23.0",
