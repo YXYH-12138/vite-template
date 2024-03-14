@@ -37,12 +37,14 @@ export default ({ mode }: ConfigEnv) => {
 			vue(),
 			createHtmlPlugin({ minify: true, inject: { data: { TITLE: VITE_APP_TITLE } } }),
 			AutoImport({
-				resolvers: [ElementPlusResolver()]
+				resolvers: [ElementPlusResolver()],
+				dts: resolve(__dirname, "./src/types/auto-imports.d.ts")
 			}),
 			Components({
 				resolvers: [ElementPlusResolver({ importStyle: "sass" })],
 				// 要搜索组件的目录的相对路径。该目录下的组件不需要导入
-				dirs: ["src/components"]
+				dirs: ["src/components"],
+				dts: resolve(__dirname, "./src/types/components.d.ts")
 			})
 		],
 		build: {
@@ -52,7 +54,14 @@ export default ({ mode }: ConfigEnv) => {
 			// 构建后是否生成 soutrce map 文件
 			sourcemap: false,
 			// 默认情况下 若 outDir 在 root 目录下， 则 Vite 会在构建时清空该目录。
-			emptyOutDir: true
+			emptyOutDir: true,
+			rollupOptions: {
+				output: {
+					chunkFileNames: "static/js/[name]-[hash].js",
+					entryFileNames: "static/js/[name]-[hash].js",
+					assetFileNames: "static/[ext]/[name]-[hash].[ext]"
+				}
+			}
 		}
 	});
 };
