@@ -26,7 +26,7 @@ const toast = () => {
 	<el-button type="info" @click="count++">count is: {{ count }}</el-button>
 	<br />
 	<el-input v-model="input" style="width: 200px; margin: 20px 20px 20px 0" />
-	<el-tag>Tag 1</el-tag>
+	<el-tag>Tag 2</el-tag>
 
 	<br />
 	<el-date-picker v-model="curDate" type="date" placeholder="Pick a day"></el-date-picker>
