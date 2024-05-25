@@ -1,0 +1,21 @@
+@use "sass:map";
+
+@use "./mixins/mixins.scss" as *;
+@use "./common/variable.scss" as *;
+
+:root {
+	--theme-color: #{$theme-color};
+	--bg-main-color: #{$bg-main-color};
+	// color
+	@each $type, $values in ($r-colors) {
+		--color-#{$type}: #{map.get($values, "base")};
+	}
+	// 字体大小
+	@include set-css-var($r-font-size, "font-size");
+	// border
+	@include set-css-var($border-color, "border-color");
+	// 字体颜色
+	@include set-css-var($r-text-color, "text-color");
+	// 头部配置
+	@include set-css-var($header, "header");
+}

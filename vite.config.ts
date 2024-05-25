@@ -5,6 +5,7 @@ import { createHtmlPlugin } from "vite-plugin-html";
 import { join, resolve } from "path";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
+import ElementPlus from "unplugin-element-plus/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 
 const pathSrc = resolve(__dirname, "src");
@@ -30,7 +31,7 @@ export default ({ mode }: ConfigEnv) => {
 		css: {
 			preprocessorOptions: {
 				scss: {
-					additionalData: `@use "~/styles/element-variable.scss" as *;`
+					additionalData: `@use "~/theme/common/variable.scss" as *;`
 				}
 			}
 		},
@@ -47,7 +48,8 @@ export default ({ mode }: ConfigEnv) => {
 				// 要搜索组件的目录的相对路径。该目录下的组件不需要导入
 				dirs: ["src/components"],
 				dts: resolve(__dirname, "./src/types/components.d.ts")
-			})
+			}),
+			ElementPlus({ useSource: true })
 		],
 		build: {
 			outDir: join("./dist"),

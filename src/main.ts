@@ -4,7 +4,6 @@ import router from "./router";
 import App from "./App.vue";
 
 import "virtual:uno.css";
-import "@/styles/index.scss";
-import "element-plus/theme-chalk/src/message.scss";
+import "@/theme/index.scss";
 
 createApp(App).use(createPinia()).use(router).mount("#app");

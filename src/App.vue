@@ -13,11 +13,4 @@ const elConfig: Partial<ConfigProviderProps> = { zIndex: 3000, size: "default", 
 	</el-config-provider>
 </template>
 
-<style lang="scss" scoped>
-.app {
-	position: absolute;
-	left: 50%;
-	top: 20%;
-	transform: translate(-50%, 0);
-}
-</style>
+<style lang="scss" scoped></style>

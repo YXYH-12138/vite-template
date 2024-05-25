@@ -1,0 +1,83 @@
+@use "sass:map";
+
+// 主题颜色
+$theme-color: blue;
+// 背景颜色
+$bg-main-color: #fff;
+
+// 字体颜色
+$r-text-color: (
+	"primary": #333333,
+	"regular": #606266,
+	"secondary": #333333,
+	"placeholder": #a8abb2,
+	"disabled": #c0c4cc,
+	"active": #1d6cea,
+	"desc": #666666
+);
+// border
+$border-color: (
+	"base": #f0f0f0
+);
+// 容器的padding
+$main-padding: 20px;
+
+// 字体大小
+$r-font-size: (
+	"extra-large": 20px,
+	"large": 18px,
+	"medium": 16px,
+	"base": 16px,
+	"small": 14px,
+	"extra-small": 12px
+);
+// 主题
+$r-colors: (
+	"primary": (
+		"base": $theme-color
+	),
+	"success": (
+		"base": #67c23a
+	),
+	"warning": (
+		"base": #e6a23c
+	),
+	"danger": (
+		"base": #f56c6c
+	),
+	"error": (
+		"base": #f56c6c
+	),
+	"info": (
+		"base": #909399
+	),
+	"nav": (
+		"base": #fafafa
+	)
+);
+
+/** header的配置 */
+$header: (
+	"height": 68px,
+	"main-size": 16px
+);
+
+// 自定义elment-plus前缀
+// @forward "element-plus/theme-chalk/src/mixins/config.scss" with (
+// 	$namespace: "ep"
+// );
+
+@forward "element-plus/theme-chalk/src/common/var.scss" with (
+	$colors: $r-colors,
+	$text-color: $r-text-color,
+	$font-size: $r-font-size
+);
+
+// if you want to import all
+// @use "element-plus/theme-chalk/src/index.scss" as *;
+
+// You can comment it to hide debug info.
+// @debug $--colors;
+
+// custom dark variables
+// @use "./dark.scss";
