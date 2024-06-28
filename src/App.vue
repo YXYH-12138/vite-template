@@ -8,7 +8,7 @@ const elConfig: Partial<ConfigProviderProps> = { zIndex: 3000, size: "default", 
 <template>
 	<el-config-provider v-bind="elConfig">
 		<div class="app">
-			<HelloWorld msg="Hello Vue 3.0 + Element Plus + Vite" />
+			<HelloWorld :msg="1" />
 		</div>
 	</el-config-provider>
 </template>
