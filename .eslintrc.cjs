@@ -9,7 +9,6 @@ module.exports = {
 	extends: [
 		"eslint:recommended",
 		"plugin:vue/vue3-essential",
-		"@vue/typescript/recommended",
 		"plugin:@typescript-eslint/recommended",
 		"plugin:prettier/recommended"
 	],
@@ -18,7 +17,8 @@ module.exports = {
 	parser: "vue-eslint-parser",
 	parserOptions: {
 		ecmaVersion: "latest",
-		sourceType: "module"
+		sourceType: "module",
+		parser: "@typescript-eslint/parser"
 	},
 	plugins: ["vue", "@typescript-eslint"],
 	rules: {
