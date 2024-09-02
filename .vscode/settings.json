@@ -1,6 +1,7 @@
 {
 	"editor.formatOnSave": true,
 	"vetur.validation.script": false,
+	"files.insertFinalNewline": true,
 	"[jsonc]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
@@ -36,5 +37,6 @@
 	},
 	"[markdown]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	}
+	},
+	"typescript.tsdk": "node_modules\\typescript\\lib"
 }

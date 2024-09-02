@@ -1,4 +1,4 @@
-/**@type {import('prettier').Config} */
+/**@type {import("prettier").Config} */
 module.exports = {
 	// 使用tab缩进
 	useTabs: true,
