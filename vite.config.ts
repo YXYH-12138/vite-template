@@ -1,11 +1,11 @@
 import { type ConfigEnv, defineConfig, loadEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
 import UnoCSS from "unocss/vite";
-import { createHtmlPlugin } from "vite-plugin-html";
 import { join, resolve } from "path";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import ElementPlus from "unplugin-element-plus/vite";
+import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 
 const pathSrc = resolve(__dirname, "src");
@@ -16,7 +16,6 @@ export default ({ mode }: ConfigEnv) => {
 
 	// 加载环境配置
 	const ENV = loadEnv(mode, root);
-
 	const { VITE_APP_TITLE } = ENV;
 
 	return defineConfig({
@@ -31,14 +30,15 @@ export default ({ mode }: ConfigEnv) => {
 		css: {
 			preprocessorOptions: {
 				scss: {
-					additionalData: `@use "~/theme/common/variable.scss" as *;`
+					additionalData: `@use "~/theme/common/variable.scss" as *;`,
+					// 解决element-plus中的sass警告问题
+					silenceDeprecations: ["legacy-js-api"]
 				}
 			}
 		},
 		plugins: [
 			UnoCSS(),
 			vue(),
-			createHtmlPlugin({ minify: true, inject: { data: { TITLE: VITE_APP_TITLE } } }),
 			AutoImport({
 				resolvers: [ElementPlusResolver()],
 				dts: resolve(__dirname, "./src/types/auto-imports.d.ts")
@@ -49,7 +49,13 @@ export default ({ mode }: ConfigEnv) => {
 				dirs: ["src/components"],
 				dts: resolve(__dirname, "./src/types/components.d.ts")
 			}),
-			ElementPlus({ useSource: true })
+			ElementPlus({ useSource: true }),
+			createSvgIconsPlugin({
+				// 指定需要缓存的图标文件夹
+				iconDirs: [resolve(__dirname, "./src/assets/icons")],
+				// 指定symbolId格式
+				symbolId: "icon-[name]"
+			})
 		],
 		build: {
 			outDir: join("./dist"),
