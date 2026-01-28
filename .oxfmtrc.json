@@ -14,5 +14,5 @@
 	"endOfLine": "crlf",
 	// 没有尾随逗号
 	"trailingComma": "none",
-	"ignorePatterns": []
+	"ignorePatterns": ["./node_modules"]
 }

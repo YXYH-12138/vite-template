@@ -17,5 +17,5 @@
 		"builtin": true
 	},
 	"globals": {},
-	"ignorePatterns": []
+	"ignorePatterns": ["./node_modules"]
 }
