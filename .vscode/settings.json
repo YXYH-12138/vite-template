@@ -1,7 +1,6 @@
 {
 	"editor.formatOnSave": true,
-	"vetur.validation.script": false,
 	"files.insertFinalNewline": true,
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.defaultFormatter": "oxc.oxc-vscode",
 	"typescript.tsdk": "node_modules\\typescript\\lib"
 }

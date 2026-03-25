@@ -2,7 +2,11 @@
 import zhCn from "element-plus/es/locale/lang/zh-cn";
 import type { ConfigProviderProps } from "element-plus";
 
-const elConfig: Partial<ConfigProviderProps> = { zIndex: 3000, size: "default", locale: zhCn };
+const elConfig: Partial<ConfigProviderProps> = {
+	zIndex: 3000,
+	size: "default",
+	locale: zhCn,
+};
 </script>
 
 <template>
