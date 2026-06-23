@@ -15,6 +15,7 @@ export const topMenus: RouteRecordRaw[] = [
 				component: () => import("@/views/nav-one/todo/index.vue"),
 				meta: {
 					title: "待办事项",
+					icon: "todo",
 				},
 			},
 		],

@@ -63,7 +63,7 @@ export default defineComponent({
 				) : (
 					item.hidden || (
 						<ElMenuItem
-							class="font-size-16px tracking-[.1em]"
+							class="text-16px tracking-[.1em]"
 							index={path}
 							v-slots={{
 								default: () => (
