@@ -184,7 +184,7 @@ html.dark {
 	color-scheme: normal;
 }
 body {
-	background-color: var(--el-bg-color) !important;
+	background-color: var(--el-bg-color);
 	transition:
 		background 0.4s ease,
 		color 0.4s ease;
