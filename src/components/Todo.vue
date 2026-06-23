@@ -180,15 +180,15 @@ const completedCount = computed(() => todos.value.filter((t) => t.done).length);
 
 <style lang="scss">
 @use "element-plus/theme-chalk/dark/css-vars.css";
-html.dark {
-	color-scheme: normal;
-}
-body {
-	background-color: var(--el-bg-color);
-	transition:
-		background 0.4s ease,
-		color 0.4s ease;
-}
+// html.dark {
+// 	color-scheme: normal;
+// }
+// body {
+// 	background-color: var(--el-bg-color);
+// 	transition:
+// 		background 0.4s ease,
+// 		color 0.4s ease;
+// }
 </style>
 <style lang="scss" scoped>
 .todo-app {
