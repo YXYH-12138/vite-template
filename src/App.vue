@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import zhCn from "element-plus/es/locale/lang/zh-cn";
-import Todo from "@/components/Todo.vue";
 import type { ConfigProviderProps } from "element-plus";
 
 const elConfig: Partial<ConfigProviderProps> = {
@@ -12,7 +11,7 @@ const elConfig: Partial<ConfigProviderProps> = {
 
 <template>
 	<el-config-provider v-bind="elConfig">
-		<Todo />
+		<router-view />
 	</el-config-provider>
 </template>
 

@@ -1,5 +1,6 @@
 import { type ConfigEnv, defineConfig, loadEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
+import vueJsx from "@vitejs/plugin-vue-jsx";
 import UnoCSS from "unocss/vite";
 import { join, resolve } from "path";
 import AutoImport from "unplugin-auto-import/vite";
@@ -24,38 +25,39 @@ export default ({ mode }: ConfigEnv) => {
 		resolve: {
 			alias: {
 				"@/": `${pathSrc}/`,
-				"~/": `${pathSrc}/`
-			}
+				"~/": `${pathSrc}/`,
+			},
 		},
 		css: {
 			preprocessorOptions: {
 				scss: {
 					additionalData: `@use "~/theme/common/variable.scss" as *;`,
 					// 解决element-plus中的sass警告问题
-					silenceDeprecations: ["legacy-js-api"]
-				}
-			}
+					silenceDeprecations: ["legacy-js-api"],
+				},
+			},
 		},
 		plugins: [
 			UnoCSS(),
 			vue(),
+			vueJsx(),
 			AutoImport({
 				resolvers: [ElementPlusResolver()],
-				dts: resolve(__dirname, "./src/types/auto-imports.d.ts")
+				dts: resolve(__dirname, "./src/types/auto-imports.d.ts"),
 			}),
 			Components({
 				resolvers: [ElementPlusResolver({ importStyle: "sass" })],
 				// 要搜索组件的目录的相对路径。该目录下的组件不需要导入
 				dirs: ["src/components"],
-				dts: resolve(__dirname, "./src/types/components.d.ts")
+				dts: resolve(__dirname, "./src/types/components.d.ts"),
 			}),
 			ElementPlus({ useSource: true }),
 			createSvgIconsPlugin({
 				// 指定需要缓存的图标文件夹
 				iconDirs: [resolve(__dirname, "./src/assets/icons")],
 				// 指定symbolId格式
-				symbolId: "icon-[name]"
-			})
+				symbolId: "icon-[name]",
+			}),
 		],
 		build: {
 			outDir: join("./dist"),
@@ -69,9 +71,9 @@ export default ({ mode }: ConfigEnv) => {
 				output: {
 					chunkFileNames: "static/js/[name]-[hash].js",
 					entryFileNames: "static/js/[name]-[hash].js",
-					assetFileNames: "static/[ext]/[name]-[hash].[ext]"
-				}
-			}
-		}
+					assetFileNames: "static/[ext]/[name]-[hash].[ext]",
+				},
+			},
+		},
 	});
 };

@@ -26,6 +26,7 @@
 		"@types/node": "^18.7.13",
 		"@unocss/preset-rem-to-px": "^0.58.5",
 		"@vitejs/plugin-vue": "^5.0.5",
+		"@vitejs/plugin-vue-jsx": "^5.1.5",
 		"@vueuse/skills": "^14.2.0",
 		"oxfmt": "^0.27.0",
 		"oxlint": "^1.42.0",

@@ -199,7 +199,6 @@ const completedCount = computed(() => todos.value.filter((t) => t.done).length);
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
-	height: 100%;
 	box-sizing: border-box;
 }
 

@@ -26,7 +26,8 @@
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["src/*"]
-		}
+		},
+		"types": ["vue/jsx"]
 	},
 	"vueCompilerOptions": {
 		"strictTemplates": false
