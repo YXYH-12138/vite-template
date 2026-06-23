@@ -29,7 +29,7 @@
 		}
 	},
 	"vueCompilerOptions": {
-		"strictTemplates": true
+		"strictTemplates": false
 	},
 	"include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

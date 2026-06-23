@@ -27,3 +27,6 @@ dist-ssr
 
 auto-imports.d.ts
 components.d.ts
+
+# Agent skills from npm packages (managed by skills-npm)
+**/skills/npm-*
