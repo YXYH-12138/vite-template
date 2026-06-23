@@ -5,7 +5,7 @@ import type { ConfigProviderProps } from "element-plus";
 const elConfig: Partial<ConfigProviderProps> = {
 	zIndex: 3000,
 	size: "default",
-	locale: zhCn,
+	locale: zhCn
 };
 </script>
 
